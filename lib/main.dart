@@ -53,17 +53,22 @@ class firstClass extends StatelessWidget {
   }
 
   Widget vista1() {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [cuboAbc('A'), cuboAbc('C')],
-      ),
-      centroListView(),
-      Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [cuboAbc('B'), cuboAbc('D')],
-      )
-    ]);
+    return Container(
+      color: Colors.black12,
+      height: double.infinity,
+      width: double.infinity,
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [cuboAbc('A'), cuboAbc('C')],
+        ),
+        centroListView(),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [cuboAbc('B'), cuboAbc('D')],
+        )
+      ]),
+    );
   }
 
   Widget cuboAbc(tipo) {
@@ -170,20 +175,25 @@ class firstClass extends StatelessWidget {
   }
 
   Widget vista2() {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [cuboAbc('D')],
-      ),
-      Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [cuboAbc('A'), cuboAbc('C')],
-      ),
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [cuboAbc('B')],
-      )
-    ]);
+    return Container(
+      color: Colors.lightBlue,
+      height: double.infinity,
+      width: double.infinity,
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [cuboAbc('D')],
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [cuboAbc('A'), cuboAbc('C')],
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [cuboAbc('B')],
+        )
+      ]),
+    );
   }
 
   Widget vista3() {
