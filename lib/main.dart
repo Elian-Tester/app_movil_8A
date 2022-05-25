@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 
@@ -57,15 +58,16 @@ class firstClass extends StatelessWidget {
       color: Colors.black12,
       height: double.infinity,
       width: double.infinity,
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Column(
+      child:
+          Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [cuboAbc('A'), cuboAbc('C')],
+          children: [cuboAbc('A'), cuboAbc('B')],
         ),
         centroListView(),
-        Column(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [cuboAbc('B'), cuboAbc('D')],
+          children: [cuboAbc('C'), cuboAbc('D')],
         )
       ]),
     );
@@ -123,55 +125,16 @@ class firstClass extends StatelessWidget {
 
   Widget centroListView() {
     return Container(
-      height: 230.0,
-      width: 200.0,
+      height: 300.0,
+      width: double.infinity,
       child: listaViewContainer(),
     );
   }
 
   Widget listaViewContainer() {
     return ListView(
-      //mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          alignment: aligment,
-          width: width,
-          height: height,
-          color: Colors.amber,
-          child: const Text(
-            'A',
-          ),
-        ),
-        Container(
-          alignment: aligment,
-          width: width,
-          height: height,
-          color: Colors.green,
-          child: const Text('B'),
-        ),
-        Container(
-          alignment: aligment,
-          width: width,
-          height: height,
-          color: Colors.blue,
-          child: const Text('C'),
-        ),
-        Container(
-          alignment: aligment,
-          width: width,
-          height: height,
-          color: Colors.orange,
-          child: const Text('D'),
-        ),
-        Container(
-          alignment: aligment,
-          width: width,
-          height: height,
-          color: Colors.purple,
-          child: const Text('E'),
-        )
-      ],
-    );
+        //mainAxisAlignment: MainAxisAlignment.center,
+        children: abcCompletoContainer());
   }
 
   Widget vista2() {
@@ -254,6 +217,66 @@ class firstClass extends StatelessWidget {
     }
     return listaTextAbc;
   }
+}
+
+List<Widget> abcCompletoContainer() {
+  const abc_array = [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+    'G',
+    'H',
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'Ñ',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'V',
+    'X',
+    'Y',
+    'Z'
+  ];
+
+  List<Widget> listaTextAbc = [];
+
+  var colores = [
+    Colors.brown,
+    Colors.green,
+    Colors.yellow,
+    Colors.blue,
+    Colors.red
+  ];
+
+  for (var abc in abc_array) {
+    Random random = new Random();
+    int randomNumber = random.nextInt(5);
+    Color color = colores[randomNumber];
+
+    final avat = Container(
+      alignment: Alignment.center,
+      width: 50.0,
+      height: 100.0,
+      color: color,
+      child: Text(
+        abc,
+      ),
+    );
+
+    listaTextAbc.add(avat);
+    //..add(Divider());
+  }
+  return listaTextAbc;
 }
 
 class _MyHomePageState extends State<MyHomePage> {
